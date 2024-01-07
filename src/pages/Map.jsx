@@ -6,9 +6,9 @@ import * as pmtiles from "pmtiles"; //pmtiles stuff
 import mapLayers from "../assets/mapLayers.json";
 import Sheet from "react-modal-sheet";
 
-import gtfsShapes from "../meta/gtfsShapes.json";
-import passioShapes from "../meta/passioShapes.json";
-import icons from "../meta/icons.json";
+//import gtfsShapes from "../meta/gtfsShapes.json";
+//import passioShapes from "../meta/passioShapes.json";
+//import icons from "../meta/icons.json";
 
 //pmtiles protocol handling setup
 let protocol = new pmtiles.Protocol();
