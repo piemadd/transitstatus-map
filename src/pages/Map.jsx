@@ -49,7 +49,7 @@ const Map = () => {
           },
           transit_lines: {
             type: "vector",
-            url: "pmtiles://https://pm.transitstat.us/transit.pmtiles",
+            url: "pmtiles://https://gobbler.transitstat.us/transit.pmtiles",
             maxzoom: 12,
           },
         },
