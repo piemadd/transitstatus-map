@@ -39,10 +39,10 @@ const Map = () => {
           protomaps: {
             type: "vector",
             tiles: [
-              "https://tilea.piemadd.com/tiles/{z}/{x}/{y}.mvt",
-              "https://tileb.piemadd.com/tiles/{z}/{x}/{y}.mvt",
-              "https://tilec.piemadd.com/tiles/{z}/{x}/{y}.mvt",
-              "https://tiled.piemadd.com/tiles/{z}/{x}/{y}.mvt",
+              "https://tilea.transitstat.us/tiles/{z}/{x}/{y}.mvt",
+              "https://tilea.transitstat.us/tiles/{z}/{x}/{y}.mvt",
+              "https://tilea.transitstat.us/tiles/{z}/{x}/{y}.mvt",
+              "https://tilea.transitstat.us/tiles/{z}/{x}/{y}.mvt",
             ],
             maxzoom: 15,
             attribution:
