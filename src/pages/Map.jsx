@@ -7,7 +7,6 @@ import mapLayers from "../assets/mapLayers.json";
 import Sheet from "react-modal-sheet";
 
 import loadTransitStatusV1 from "./loadTransitStatusV1.js";
-import loadIcons from "./loadIcons.js";
 
 //import gtfsShapes from "../meta/gtfsShapes.json";
 //import passioShapes from "../meta/passioShapes.json";
@@ -67,10 +66,7 @@ const Map = () => {
       center: [-96.63, 38.82],
       zoom: 3,
     });
-
-    //
-
-    loadIcons(map.current);
+    
     loadTransitStatusV1(map.current);
 
     map.current.once("load", () => {
