@@ -1,0 +1,1 @@
+image-sdf ./public/icons/full_arrow.png --spread 8 > ./public/icons/full_arrow_sdf.png

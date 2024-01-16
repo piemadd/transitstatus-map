@@ -6,6 +6,9 @@ import * as pmtiles from "pmtiles"; //pmtiles stuff
 import mapLayers from "../assets/mapLayers.json";
 import Sheet from "react-modal-sheet";
 
+import loadTransitStatusV1 from "./loadTransitStatusV1.js";
+import loadIcons from "./loadIcons.js";
+
 //import gtfsShapes from "../meta/gtfsShapes.json";
 //import passioShapes from "../meta/passioShapes.json";
 //import icons from "../meta/icons.json";
@@ -36,7 +39,12 @@ const Map = () => {
         sources: {
           protomaps: {
             type: "vector",
-            url: "pmtiles://https://pm.transitstat.us/20240105.pmtiles",
+            tiles: [
+              "https://tilea.piemadd.com/tiles/{z}/{x}/{y}.mvt",
+              "https://tileb.piemadd.com/tiles/{z}/{x}/{y}.mvt",
+              "https://tilec.piemadd.com/tiles/{z}/{x}/{y}.mvt",
+              "https://tiled.piemadd.com/tiles/{z}/{x}/{y}.mvt",
+            ],
             maxzoom: 15,
             attribution:
               "Map Data &copy; OpenStreetMap Contributors | &copy; Transitstatus 2023 | Uses Protomaps",
@@ -61,6 +69,9 @@ const Map = () => {
     });
 
     //
+
+    loadIcons(map.current);
+    loadTransitStatusV1(map.current);
 
     map.current.once("load", () => {
       //load in the shapes upon map loading complete
