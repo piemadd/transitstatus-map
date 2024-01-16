@@ -6,7 +6,7 @@ import * as pmtiles from "pmtiles"; //pmtiles stuff
 import mapLayers from "../assets/mapLayers.json";
 import Sheet from "react-modal-sheet";
 
-import loadTransitStatusV1 from "./loadTransitStatusV1.js";
+import loadTransitStatusV1 from "./mapComponents/loadTransitStatusV1.js";
 
 //import gtfsShapes from "../meta/gtfsShapes.json";
 //import passioShapes from "../meta/passioShapes.json";
@@ -66,7 +66,7 @@ const Map = () => {
       center: [-96.63, 38.82],
       zoom: 3,
     });
-    
+
     loadTransitStatusV1(map.current);
 
     map.current.once("load", () => {
