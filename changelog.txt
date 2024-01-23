@@ -1,0 +1,19 @@
+2.0.0-alpha.1:
+  - Initial Setup
+2.0.0-alpha.2:
+  - Removed unneeded shapes info
+2.0.0-alpha.3:
+  - Switched transit lines data source
+2.0.0-alpha.4: 
+  - Moved to CF Worker tile serving
+  - Added vehicle icons
+2.0.0-alpha.5:
+  - Removed unneeded icon loading code
+2.0.0-alpha.6: 
+  - Removed unused files and assets
+  - Reorganized files
+2.0.0-alpha.7: 
+  - Switched tile serving URLs
+2.0.0-alpha.8:
+  - Fixed tile serving URLs
+  - Added outlines to route shapes for better contrast

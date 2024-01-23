@@ -14,22 +14,21 @@ const loadTransitStatusV1 = (map) => {
       const agency = agencies[agencyKey];
       //console.log(agency)
 
-      const getAgencyData = async () => {
-        const res = await fetch(agency.endpoint);
-        const data = await res.json();
-        let finalGeoJSON = {
+      const processTrainData = (agencyData) => {
+        let trainsGeoJSON = {
           "type": "FeatureCollection",
           "features": []
         };
 
-        Object.keys(data.trains).forEach((runNumber) => {
-          const train = data.trains[runNumber];
+        Object.keys(agencyData.trains).forEach((runNumber) => {
+          const train = agencyData.trains[runNumber];
 
-          finalGeoJSON.features.push({
+          trainsGeoJSON.features.push({
             "type": "Feature",
             "properties": {
               color: `#${train.lineColor}`,
               heading: train.heading,
+              train,
             },
             "geometry": {
               "coordinates": [
@@ -41,14 +40,23 @@ const loadTransitStatusV1 = (map) => {
           })
         })
 
-        return finalGeoJSON;
+        return trainsGeoJSON;
+      }
+
+      const getAgencyData = async () => {
+        const res = await fetch(agency.endpoint);
+        const data = await res.json();
+        
+        return data;
       }
 
       getAgencyData()
         .then((data) => {
+          const processed = processTrainData(data);
+
           map.addSource(`transit-vehicles-${agencyKey}`, {
             type: 'geojson',
-            data: data
+            data: processed
           });
 
           map.addLayer({
@@ -72,8 +80,10 @@ const loadTransitStatusV1 = (map) => {
           setInterval(() => {
             getAgencyData()
               .then((data) => {
+                const processed = processTrainData(data);
+
                 map.getSource(`transit-vehicles-${agencyKey}`)
-                  .setData(data)
+                  .setData(processed)
               });
           }, 10000)
         })

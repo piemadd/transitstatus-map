@@ -40,13 +40,13 @@ const Map = () => {
             type: "vector",
             tiles: [
               "https://tilea.transitstat.us/tiles/{z}/{x}/{y}.mvt",
-              "https://tilea.transitstat.us/tiles/{z}/{x}/{y}.mvt",
-              "https://tilea.transitstat.us/tiles/{z}/{x}/{y}.mvt",
-              "https://tilea.transitstat.us/tiles/{z}/{x}/{y}.mvt",
+              "https://tileb.transitstat.us/tiles/{z}/{x}/{y}.mvt",
+              "https://tilec.transitstat.us/tiles/{z}/{x}/{y}.mvt",
+              "https://tiled.transitstat.us/tiles/{z}/{x}/{y}.mvt",
             ],
             maxzoom: 15,
             attribution:
-              "Map Data &copy; OpenStreetMap Contributors | &copy; Transitstatus 2023 | Uses Protomaps",
+              "Map Data &copy; OpenStreetMap Contributors | &copy; Transitstatus | &copy; Protomaps",
           },
           natural_earth_shaded_relief: {
             maxzoom: 6,
@@ -68,71 +68,6 @@ const Map = () => {
     });
 
     loadTransitStatusV1(map.current);
-
-    map.current.once("load", () => {
-      //load in the shapes upon map loading complete
-      /*
-      [...new Set(gtfsShapes)].forEach((shapePath) => {
-        const shapeURL = `https://gtfs.piemadd.com/data/${shapePath}`;
-        const agencyKey = `${shapePath.split("/")[0]}_${shapePath
-          .split("/")[2]
-          .replace(".geojson", "")}`;
-        fetch(shapeURL)
-          .then((res) => res.json())
-          .then((data) => {
-            map.current.addSource(`routes_${agencyKey}`, {
-              type: "geojson",
-              data: data,
-            });
-
-            map.current.addLayer({
-              id: `routes_${agencyKey}`,
-              type: "line",
-              source: `routes_${agencyKey}`,
-              minzoom: data.features[0].properties.minZoom,
-              layout: {
-                "line-join": "round",
-                "line-cap": "round",
-              },
-              paint: {
-                "line-color": ["get", "routeColor"],
-                "line-opacity": 1,
-                "line-width": 2,
-              },
-            });
-          });
-      });
-
-      [...new Set(passioShapes)].forEach((shapePath) => {
-        const shapeURL = `https://passio.piemadd.com/data/${shapePath}`;
-        const agencyKey = shapePath.split("/")[0];
-        fetch(shapeURL)
-          .then((res) => res.json())
-          .then((data) => {
-            map.current.addSource(`routes_${agencyKey}`, {
-              type: "geojson",
-              data: data,
-            });
-
-            map.current.addLayer({
-              id: `routes_${agencyKey}`,
-              type: "line",
-              minzoom: data.features[0].properties.minZoom,
-              source: `routes_${agencyKey}`,
-              layout: {
-                "line-join": "round",
-                "line-cap": "round",
-              },
-              paint: {
-                "line-color": ["get", "routeColor"],
-                "line-opacity": 1,
-                "line-width": 2,
-              },
-            });
-          });
-      });
-      */
-    });
   }, []);
 
   return (
