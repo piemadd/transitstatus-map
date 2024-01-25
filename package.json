@@ -9,6 +9,7 @@
     "preview": "vite preview --host --port 3000"
   },
   "dependencies": {
+    "@fontsource/atkinson-hyperlegible": "^5.0.18",
     "framer-motion": "^10.17.9",
     "gtfs-realtime-bindings": "^1.1.1",
     "maplibre-gl": "^3.6.2",

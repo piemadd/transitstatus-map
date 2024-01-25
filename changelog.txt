@@ -17,3 +17,13 @@
 2.0.0-alpha.8:
   - Fixed tile serving URLs
   - Added outlines to route shapes for better contrast
+2.0.0-alpha.9:
+  - Removed loading of unnecessary raster tiles.
+2.0.0-beta.1:
+  - Added station menu
+  - Added preliminary vehicle menu
+  - Added code to properly sort vehicles and lines
+  - Setup code in a way I can move into other files easily later
+  - TODO: move code into other files
+  - TODO: use a sidebar on desktop/tablet
+  - TODO: handle overlapping click

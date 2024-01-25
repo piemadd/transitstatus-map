@@ -1,1 +1,1 @@
-image-sdf ./public/icons/full_arrow.png --spread 8 > ./public/icons/full_arrow_sdf.png
+image-sdf ./src/assets/full_circle.png --spread 16 > ./src/assets/full_circle_small_sdf.png

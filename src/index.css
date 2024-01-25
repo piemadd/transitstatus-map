@@ -24,9 +24,92 @@ body,
 section.topBar {
   height: 48px;
   background-color: var(--bg2);
+}
+
+div.topBarContent {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 16px);
+  height: calc(100% - 8px);
+  padding: 4px 8px;
 }
 
 section.map {
   height: calc(100% - 48px);
+}
+
+.maplibregl-ctrl-attrib-inner {
+  color: #000;
+}
+
+.maplibregl-popup-content {
+  background-color: #222;
+  color: #fff;
+}
+
+.react-modal-sheet-container,
+.react-modal-sheet-header,
+.react-modal-sheet-content {
+  background-color: #222;
+  color: #fff;
+  font-family: Raleway;
+}
+
+.modal-sheet-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 12px 12px 12px;
+  width: calc(100% - 24px);
+  max-width: 600px;
+  gap: 4px;
+}
+
+div.stationTitleHolder {
+  display: flex;
+  gap: 4px;
+}
+
+div.stationTitle {
+  background-color: #333;
+  padding: 4px 8px;
+  flex: 2;
+}
+
+button.stationTitleButton {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+div.train {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+}
+
+div.train h3 {
+  font-size: 22px;
+}
+
+div.train span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.trainAdd {
+  display: flex;
+  overflow-x: none;
+  width: 100%;
+  gap: 4px;
+}
+
+p.destinations {
+  background-color: #444;
+  font-weight: 500;
+  padding: 4px;
 }
